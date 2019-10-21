@@ -8,7 +8,7 @@ scalaVersion := "2.12.4"
 
 crossScalaVersions := Seq("2.11.11", "2.12.4")
 
-val akkaVersion = "2.5.11"
+val akkaVersion = "2.5.26"
 
 licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT"))
 
