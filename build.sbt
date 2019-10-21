@@ -26,7 +26,7 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.2.3" % "test",
   "org.iq80.leveldb" % "leveldb" % "0.10",
   "org.typelevel" %% "cats-core" % "1.2.0",
-  "com.lightbend.akka" %% "akka-stream-alpakka-s3" % "0.17" % "test"
+  "com.lightbend.akka" %% "akka-stream-alpakka-s3" % "0.17.2" % "test"
 )
 
 parallelExecution in Test := false
