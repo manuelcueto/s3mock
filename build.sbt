@@ -25,7 +25,7 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.5" % "test",
   "ch.qos.logback" % "logback-classic" % "1.2.3" % "test",
   "org.iq80.leveldb" % "leveldb" % "0.10",
-  "org.typelevel" %% "cats-core" % "1.2.0",
+  "org.typelevel" %% "cats-core" % "1.6.1",
   "com.lightbend.akka" %% "akka-stream-alpakka-s3" % "0.17" % "test"
 )
 
