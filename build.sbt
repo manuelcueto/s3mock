@@ -14,8 +14,13 @@ licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT"))
 
 homepage := Some(url("https://github.com/findify/s3mock"))
 
+resolvers ++= Seq(
+  Resolver.bintrayRepo("ovotech", "maven")
+)
+
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % akkaVersion,
+  "com.ovoenergy" %% "algae" % "0.2.1",
   "com.typesafe.akka" %% "akka-http" % "10.1.0",
   "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % "test",
   "org.scala-lang.modules" %% "scala-xml" % "1.1.0",
