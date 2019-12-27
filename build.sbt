@@ -20,6 +20,9 @@ resolvers ++= Seq(
   "segence" at "https://dl.bintray.com/segence/maven-oss-releases/"
 )
 
+resolvers += Resolver.sonatypeRepo("releases")
+resolvers += Resolver.bintrayRepo("slamdata-inc", "maven-public")
+
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % akkaVersion,
   "com.ovoenergy" %% "algae" % "0.2.1",
