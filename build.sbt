@@ -15,12 +15,15 @@ licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT"))
 homepage := Some(url("https://github.com/findify/s3mock"))
 
 resolvers ++= Seq(
-  Resolver.bintrayRepo("ovotech", "maven")
+  Resolver.bintrayRepo("ovotech", "maven"),
+  Resolver.bintrayRepo("slamdata-inc", "maven-public"),
+  "segence" at "https://dl.bintray.com/segence/maven-oss-releases/"
 )
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % akkaVersion,
   "com.ovoenergy" %% "algae" % "0.2.1",
+  "io.kamon" %% "kamon-jmx-collector" % "0.1.6",
   "com.typesafe.akka" %% "akka-http" % "10.1.0",
   "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % "test",
   "org.scala-lang.modules" %% "scala-xml" % "1.1.0",
@@ -43,11 +46,10 @@ publishTo := {
   if (isSnapshot.value)
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
-    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+    Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
 
-pomExtra := (
-    <scm>
+pomExtra := (<scm>
       <url>git@github.com:findify/s3mock.git</url>
       <connection>scm:git:git@github.com:findify/s3mock.git</connection>
     </scm>
@@ -68,7 +70,14 @@ dockerfile in docker := new Dockerfile {
   from("openjdk:9.0.1-11-jre-slim")
   expose(8001)
   add(assembly.value, "/app/s3mock.jar")
-  entryPoint("java", "-Xmx128m", "-jar", "--add-modules", "java.xml.bind", "/app/s3mock.jar")
+  entryPoint(
+    "java",
+    "-Xmx128m",
+    "-jar",
+    "--add-modules",
+    "java.xml.bind",
+    "/app/s3mock.jar"
+  )
 }
 imageNames in docker := Seq(
   ImageName(s"findify/s3mock:${version.value.replaceAll("\\+", "_")}"),
@@ -82,4 +91,4 @@ packageSummary in Docker := "S3Mock"
 packageDescription := "Mock Service For S3"
 dockerUpdateLatest := true
 dockerExposedPorts := Seq(8001)
-*/
+ */
