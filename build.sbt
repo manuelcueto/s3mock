@@ -27,7 +27,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % akkaVersion,
   "com.ovoenergy" %% "algae" % "0.2.1",
   "io.kamon" %% "kamon-jmx-collector" % "0.1.6",
-  "com.typesafe.akka" %% "akka-http" % "10.1.0",
+  "com.typesafe.akka" %% "akka-http" % "10.1.11",
   "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % "test",
   "org.scala-lang.modules" %% "scala-xml" % "1.1.0",
   "com.github.pathikrit" %% "better-files" % "3.4.0",
