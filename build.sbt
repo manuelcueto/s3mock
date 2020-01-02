@@ -26,7 +26,7 @@ resolvers += Resolver.bintrayRepo("slamdata-inc", "maven-public")
 libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % akkaVersion,
   "com.ovoenergy" %% "algae" % "0.2.1",
-  "io.kamon" %% "kamon-jmx-collector" % "0.1.6",
+  "io.kamon" %% "kamon-jmx-collector" % "0.1.8",
   "com.typesafe.akka" %% "akka-http" % "10.1.0",
   "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % "test",
   "org.scala-lang.modules" %% "scala-xml" % "1.1.0",
